@@ -18,7 +18,7 @@ let dogId = 0
 function getDogHtml(data) {
     let doghtml = ''
 
-    dogId = Math.floor(Math.random(0) * dogsData.length)
+    dogId = Math.floor(Math.random() * dogsData.length)
     data = dogsData[dogId]
 
     doghtml =  `
@@ -35,13 +35,13 @@ function nope() {
     nopeImg.style.display = "block";
     likeBtn.disabled = true;
 
-    if(dogId > 0) {
+    if(dogsData.length > 1) {
         setTimeout(() => {
             dogsData.splice(dogId, 1)
             render()
             nopeImg.style.display = "none"; 
             likeBtn.disabled = false;
-        }, 1500)
+        }, 1000)
     } else {
         setTimeout(() => {
             endPage.style.display = "flex"; 
@@ -53,13 +53,13 @@ function like() {
     likeImg.style.display = "block";
     nopeBtn.disabled = true;
    
-    if(dogId > 0) {
+    if(dogsData.length > 1) {
         setTimeout(() => {
             dogsData.splice(dogId, 1)
             render()
             likeImg.style.display = "none"; 
             nopeBtn.disabled = false;
-        }, 1500)
+        }, 1000)
     } else {
         setTimeout(() => {
             endPage.style.display = "flex"; 
