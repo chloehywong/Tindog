@@ -1,0 +1,157 @@
+html, body {
+    font-family: 'Kalam', cursive;
+    margin: 0; 
+    padding: 0; 
+}
+
+main {
+    width: 30%;
+    height: 725px;
+    margin: 25px auto; 
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(#ffff, #f8f9fa);
+    position: relative;
+}
+
+/* .....menu...... */
+.menu {
+    display: flex; 
+    justify-content: space-between;
+    padding: 20px 25px;
+    height: 30px; 
+    align-items: center;
+}
+
+.icon {
+    width: 28px;
+    height: 28px;
+}
+
+.icon-btn {
+    background-color: transparent;
+    border: none;
+}
+
+.logo {
+    width: 25px;
+    height: 20px;
+}
+
+.logo-btn {
+    width: 84px;
+    height: 42px;
+    background: linear-gradient(270deg, #FA695A 0%, #F83375 100%);
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+
+/* ...profile-cover... */
+.profile {
+    position: relative;
+    text-align: center;
+}
+
+.cover-img {
+    width: 95%;
+    height: 550px;
+    border-radius: 15px;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+.name {
+    position: absolute;
+    bottom: 25px;
+    left: 30px;
+    font-size: 30px;
+    color: #ffff;
+    text-shadow: 1px 1px #6c757d;
+}
+
+.bio {
+    position: absolute; 
+    bottom: -5px;
+    left: 30px;
+    font-size: 22px;
+    color: #ffff;
+    text-shadow: 1px 1px #6c757d;
+    width: 350px;
+    line-height: 1.25rem;
+    text-align: left; 
+    font-weight: 600;
+}
+
+.nope-img, .like-img {
+    position: absolute;
+    top: 100px;
+    left: 25px;
+    width: 150px; 
+    height: 80px;
+    transform: rotate(-25deg);
+    display: none;
+}
+
+.end-page {
+    width: 95%;
+    height: 550px;
+    border-radius: 15px;
+    background-color: #B7B7B7;
+    position: absolute;
+    top: 70px;
+    left: 11px; 
+    font-size: 30px;
+    color: #f8f9fa;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ...Btn... */
+
+.nope-btn, .like-btn {
+    border-radius: 50%;
+    border: none;
+    background-color:#ffff;
+    width: 75px; 
+    height: 75px;
+}
+
+.nope-icon {
+    width: 60%; 
+    height: 35px;
+}
+
+.like-icon {
+    width: 65%; 
+    height: 35px;
+}
+
+.nope-btn:hover {
+    background-color: #FFE7EF;
+}
+
+.like-btn:hover {
+    background-color: #DBFFF4;
+
+}
+
+.main-btn {
+    display: flex;
+    justify-content: center;
+    gap: 40px; 
+    margin-top: 15px; 
+}
+
+
+@media only screen and (max-width: 600px) {
+    main {
+        width: 100%;
+        height: 750px;
+    }
+}
+
+
+
+
