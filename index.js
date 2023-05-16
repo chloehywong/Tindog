@@ -1,4 +1,5 @@
 import dogsData from '/data.js'
+import Dog from '/Dog.js'
 
 const nopeBtn = document.getElementById("nopeBtn")
 const likeBtn = document.getElementById("likeBtn")
@@ -10,34 +11,21 @@ document.getElementById("nopeBtn").addEventListener("click", nope)
 document.getElementById("likeBtn").addEventListener("click", like)
 
 
+function getNewDog() {
+    const nextDogProfile = dogsData.shift();
+    return nextDogProfile ? new Dog(nextDogProfile) : []
+}
 
-// Later, build a constructor function in Dog.js
-let dogId = 0
-
-
-function getDogHtml(data) {
-    let doghtml = ''
-
-    dogId = Math.floor(Math.random() * dogsData.length)
-    data = dogsData[dogId]
-
-    doghtml =  `
-        <div class="profile">
-            <img class="cover-img" src="${data.avatar}">
-            <h1 class="name">${data.name}, ${data.age}</h1>
-            <p class="bio">${data.bio}</p>
-        </div>
-    `
-    return doghtml
-} 
 
 function nope() {
     nopeImg.style.display = "block";
     likeBtn.disabled = true;
 
-    if(dogsData.length > 1) {
+    dog.hasBeenSwiped = true;
+
+    if (dogsData.length > 0) {
         setTimeout(() => {
-            dogsData.splice(dogId, 1)
+            dog = getNewDog()
             render()
             nopeImg.style.display = "none"; 
             likeBtn.disabled = false;
@@ -52,10 +40,13 @@ function nope() {
 function like() {
     likeImg.style.display = "block";
     nopeBtn.disabled = true;
+
+    dog.hasBeenSwiped = true;
+    dog.hasBeenLiked = true;
    
-    if(dogsData.length > 1) {
+    if(dogsData.length > 0) {
         setTimeout(() => {
-            dogsData.splice(dogId, 1)
+            dog = getNewDog()
             render()
             likeImg.style.display = "none"; 
             nopeBtn.disabled = false;
@@ -68,9 +59,10 @@ function like() {
 }
 
 
-
 function render() {
-    document.getElementById("dog").innerHTML = getDogHtml()
+    document.getElementById("dog").innerHTML = dog.doghtml()
 }
+
+let dog = getNewDog()
 render()
 

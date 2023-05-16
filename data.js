@@ -1,4 +1,4 @@
-const dogsData = [
+let dogsData = [
     {
         name: "Rex",
         avatar: "images/dog-rex.jpg",
@@ -39,6 +39,6 @@ const dogsData = [
         hasBeenSwiped: false,
         hasBeenLiked: false
     }
-]   
+]
 
 export default dogsData 
